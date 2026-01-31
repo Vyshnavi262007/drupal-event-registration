@@ -1,0 +1,20 @@
+<?php
+
+use Drupal\Core\Mail\MailManagerInterface;
+
+function event_registration_mail($key, &$message, $params) {
+
+  if ($key == 'registration_confirm') {
+
+    $message['subject'] = 'Event Registration Confirmation';
+
+    $message['body'][] = "Hello {$params['name']},";
+    $message['body'][] = "";
+    $message['body'][] = "You have successfully registered.";
+    $message['body'][] = "Event: {$params['event_name']}";
+    $message['body'][] = "Date: {$params['event_date']}";
+    $message['body'][] = "Category: {$params['category']}";
+    $message['body'][] = "";
+    $message['body'][] = "Thank you!";
+  }
+}

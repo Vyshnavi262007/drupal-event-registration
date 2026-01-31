@@ -1,0 +1,77 @@
+<?php
+
+function event_registration_schema() {
+
+  $schema['event_config'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'start_date' => [
+        'type' => 'varchar',
+        'length' => 20,
+      ],
+      'end_date' => [
+        'type' => 'varchar',
+        'length' => 20,
+      ],
+      'event_date' => [
+        'type' => 'varchar',
+        'length' => 20,
+      ],
+      'event_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+      ],
+      'category' => [
+        'type' => 'varchar',
+        'length' => 100,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  $schema['event_registration'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'full_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+      ],
+      'email' => [
+        'type' => 'varchar',
+        'length' => 255,
+      ],
+      'college' => [
+        'type' => 'varchar',
+        'length' => 255,
+      ],
+      'department' => [
+        'type' => 'varchar',
+        'length' => 255,
+      ],
+      'event_date' => [
+        'type' => 'varchar',
+        'length' => 20,
+      ],
+      'event_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+      ],
+      'category' => [
+        'type' => 'varchar',
+        'length' => 100,
+      ],
+      'created' => [
+        'type' => 'int',
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}
