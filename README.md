@@ -1,54 +1,71 @@
-# Event Registration Module – Drupal 10
+Event Registration Module – Drupal 10
 
-Custom Drupal 10 module for managing event registrations with admin configuration, AJAX filters, email notifications, and CSV export.
+This is a custom Drupal 10 module that allows users to register for events and helps admins manage events easily. It includes event configuration, dynamic forms using AJAX, validations, email notifications, and CSV export.
 
----
+What this module does
+Admin can:
 
-## 📦 Features
+• Add event details (start date, end date, event date, name, category)
+• Control when registration is open
+• View all registrations
+• Filter registrations
+• Download registrations as CSV
 
-### Admin Event Configuration
-- Event registration start date
-- Event registration end date
-- Event date
-- Event name
-- Event category
+Users can:
 
-### Event Registration Form
-- Full Name
-- Email
-- College
-- Department
-- Category (AJAX)
-- Event Date (AJAX)
-- Event Name (AJAX)
+• Register for events
+• Select category → date → event name dynamically (AJAX)
+• Receive confirmation email after registering
 
-Registration is allowed only between start and end date.
+Validations included
 
----
+• Proper email format check
+• Only letters allowed in name, college, department
+• Prevents duplicate registration for same event
 
-## ✅ Validations
-- Email format validation
-- Text fields allow only letters
-- Prevents duplicate registration (Email + Event Date)
+Database tables used
+event_config
 
----
+Stores event details set by admin
 
-## 🗄 Database Tables
+Fields:
+id, start_date, end_date, event_date, event_name, category
 
-### event_config
-| id | start_date | end_date | event_date | event_name | category |
+event_registration
 
-### event_registration
-| id | full_name | email | college | department | event_date | event_name | category | created |
+Stores user registrations
 
----
+Fields:
+id, full_name, email, college, department, event_date, event_name, category, created
 
-## 📧 Email Notifications
-- User receives confirmation mail
-- Admin receives notification (configurable)
+Email feature
 
----
+• User gets confirmation mail
+• Admin gets notification mail
 
-## 📊 Admin Pages
+How to install
 
-### Event Configuration Form
+Place module in:
+
+modules/custom/event_registration
+
+Enable it from:
+
+Admin → Extend
+
+Import database file:
+
+event_registration.sql
+
+Clear cache
+
+Tech used
+
+Drupal 10
+PHP
+MySQL
+AJAX
+
+Created by
+
+Vyshnavi Ponapati
