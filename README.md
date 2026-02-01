@@ -170,9 +170,37 @@ Highlights
 ✔ Admin management tools
 ✔ CSV export
 
+Screenshots
+
+### Event Configuration Page
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c42097b4-72eb-489d-9d4b-445205da9fc5" />
+
+
+### Event Registration Form
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/19d82f3e-9fbb-4c7e-a231-dd66637c89c5" />
+
+
+### Admin Registrations List
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bc1d2e47-3ded-4e28-938d-211b92405d4c" />
+
+
+### CSV Export
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bc9ddb77-b1a7-440e-befa-5a60c6c27ab9" />
+
+
+Future Enhancements
+
+- User login based registration
+- Event capacity limits
+- Automatic registration closing when slots are full
+- Calendar integration
+- Email templates customization
+- PDF export of registrations
+
 Author
 
 Vyshnavi Ponapati
 Custom Drupal 10 Module Project
+
 
 
