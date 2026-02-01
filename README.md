@@ -1,71 +1,177 @@
-Event Registration Module – Drupal 10
+ Drupal 10 Event Registration Module
 
-This is a custom Drupal 10 module that allows users to register for events and helps admins manage events easily. It includes event configuration, dynamic forms using AJAX, validations, email notifications, and CSV export.
+A custom Drupal 10 module that allows administrators to configure events and users to register through a dynamic AJAX-based form with validations, email notifications, admin management, and CSV export.
 
-What this module does
-Admin can:
+ Features
+Event Configuration (Admin)
 
-• Add event details (start date, end date, event date, name, category)
-• Control when registration is open
-• View all registrations
-• Filter registrations
-• Download registrations as CSV
+Admins can configure events with:
 
-Users can:
+Registration Start Date
 
-• Register for events
-• Select category → date → event name dynamically (AJAX)
-• Receive confirmation email after registering
+Registration End Date
 
-Validations included
+Event Date
 
-• Proper email format check
-• Only letters allowed in name, college, department
-• Prevents duplicate registration for same event
+Event Name
 
-Database tables used
+Event Category
+
+Online Workshop
+
+Hackathon
+
+Conference
+
+One-day Workshop
+
+📝 Event Registration Form (Users)
+
+Users can register with:
+
+Full Name
+
+Email Address
+
+College Name
+
+Department
+
+Category (AJAX dropdown)
+
+Event Date (AJAX based on category)
+
+Event Name (AJAX based on date & category)
+
+Registration is allowed only between configured start and end dates.
+
+✅ Validations
+
+Prevents duplicate registrations (Email + Event Date)
+
+Email format validation
+
+Text fields allow only letters
+
+User-friendly error messages
+
+🗄 Database Tables
 event_config
 
-Stores event details set by admin
-
-Fields:
-id, start_date, end_date, event_date, event_name, category
+| id | start_date | end_date | event_date | event_name | category |
 
 event_registration
 
-Stores user registrations
+| id | full_name | email | college | department | event_date | event_name | category | created |
 
-Fields:
-id, full_name, email, college, department, event_date, event_name, category, created
+📧 Email Notifications
 
-Email feature
+Confirmation email to user
 
-• User gets confirmation mail
-• Admin gets notification mail
+Notification email to admin (configurable)
 
-How to install
+Email includes:
 
-Place module in:
+User Name
 
-modules/custom/event_registration
+Event Date
 
-Enable it from:
+Event Name
 
-Admin → Extend
+Category
 
-Import database file:
+Admin Features
+Admin Listing Page
+
+View all registrations
+
+Filter by:
+
+Event Date (AJAX)
+
+Event Name (AJAX)
+
+Shows total participants
+
+Export all data as CSV
+
+Accessible only with custom permission.
+
+⚙ Configuration Page
+
+Admin can:
+
+Set admin notification email
+
+Enable/disable admin email alerts
+
+Built using Drupal Config API (no hard-coded values).
+
+Installation Steps
+
+Copy module to:
+
+/modules/custom/event_registration
+
+
+Enable module:
+
+Admin → Extend → Enable Event Registration Module
+
+
+Import database tables:
+
+Open phpMyAdmin → select database → Import
+Upload:
 
 event_registration.sql
 
-Clear cache
 
-Tech used
+Clear cache:
 
-Drupal 10
+Admin → Configuration → Performance → Clear cache
+
+🌐 Important URLs
+Feature	URL
+Event Config Form	/admin/event-config
+Registration Form	/event-register
+Admin Registrations	/admin/event-registrations
+
+(Adjust if routes differ in your setup)
+
+🛠 Technologies Used
+
+Drupal 10.x
+
 PHP
-MySQL
-AJAX
 
-Created by
+MySQL
+
+AJAX (Drupal Form API)
+
+Drupal Mail API
+
+📁 Project Structure
+event_registration/
+ ├── src/
+ │   ├── Form/
+ │   └── Controller/
+ ├── event_registration.info.yml
+ ├── event_registration.routing.yml
+ ├── event_registration.permissions.yml
+ └── README.md
+
+⭐ Highlights
+
+✔ No contrib modules used
+✔ Clean Drupal architecture
+✔ AJAX dependent dropdowns
+✔ Real-world validations
+✔ Admin management tools
+✔ CSV export
+
+Author
 
 Vyshnavi Ponapati
+Custom Drupal 10 Module Project
+
