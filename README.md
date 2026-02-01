@@ -25,7 +25,7 @@ Conference
 
 One-day Workshop
 
-📝 Event Registration Form (Users)
+Event Registration Form (Users)
 
 Users can register with:
 
@@ -45,7 +45,7 @@ Event Name (AJAX based on date & category)
 
 Registration is allowed only between configured start and end dates.
 
-✅ Validations
+Validations
 
 Prevents duplicate registrations (Email + Event Date)
 
@@ -131,7 +131,7 @@ Clear cache:
 
 Admin → Configuration → Performance → Clear cache
 
-🌐 Important URLs
+Important URLs
 Feature	URL
 Event Config Form	/admin/event-config
 Registration Form	/event-register
@@ -139,7 +139,7 @@ Admin Registrations	/admin/event-registrations
 
 (Adjust if routes differ in your setup)
 
-🛠 Technologies Used
+Technologies Used
 
 Drupal 10.x
 
@@ -151,7 +151,7 @@ AJAX (Drupal Form API)
 
 Drupal Mail API
 
-📁 Project Structure
+Project Structure
 event_registration/
  ├── src/
  │   ├── Form/
@@ -161,7 +161,7 @@ event_registration/
  ├── event_registration.permissions.yml
  └── README.md
 
-⭐ Highlights
+Highlights
 
 ✔ No contrib modules used
 ✔ Clean Drupal architecture
@@ -174,4 +174,5 @@ Author
 
 Vyshnavi Ponapati
 Custom Drupal 10 Module Project
+
 
